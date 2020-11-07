@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islamic Questions & Answers</title>
     <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+        display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        *{
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
         *{
             padding: 0px;
             margin: 0px;
@@ -14,27 +24,40 @@
             overflow-x: hidden;
         }
         img{
-            width:70%;
+            width:70vw;
             float:left;
         }
         .videos{
             float:right;
-            width:30%;
-            padding: 0px;
+            width:calc(30vw - 46px);
+            padding: 20px;
+            border: 3px solid green;
+            overflow-y: scroll;
         }
         .videos iframe{
-            margin: 20px -20px;
+            width:100%;
+            margin: 10px 0px;
         }
     </style>
+    <script>
+        window.onload = function(){
+            document.getElementById("video").style.height = (document.getElementById("main").clientHeight - 46) + "px";
+        }
+        window.onresize = function(){
+            document.getElementById("video").style.height = (document.getElementById("main").clientHeight - 46) + "px";
+        }
+    </script>
 </head>
 <body>
-    <img src="design/design2.jpg" alt="">
-    <div class="videos">
+    <img id="main" src="design/design2.jpg" alt="">
+    <div class="videos" id="video">
         <iframe src="https://www.youtube.com/embed/inYiFydSCew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/4fZ_sDdbDoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/PqkxhTyYbxw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/j-K6AGxMMnM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/wsuVDshVxj0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/inYiFydSCew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/4fZ_sDdbDoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </body>
 </html>
